@@ -1,11 +1,29 @@
+
+let usersAll = [
+  {nickname:"Petr", password: 222, groups: "admin"},
+  {nickname:"Alexey", password: 222, groups: ["admin","manager","basicUser"]},
+  {nickname:"Askar", password: 222, groups: ["marketStaff","basicUser"]}
+];
+
 // Возвращает массив всех пользователей.
 function users() {}
 
 //Создает нового пользователя с указанным логином username и паролем password, возвращает созданного пользователя.
-function createUser(name, password) {}
+function createUsers(name,pass) {
+  usersAll.push({nickname:name,password:pass})
+  return (name,pass)
+}
 
 // Удаляет пользователя user
-function deleteUser(user) {}
+function deleteUsers(name) {
+  usersAll.forEach((items,index) => {
+    if (items.nickname == name) {
+      usersAll.splice(index,1)
+    }
+    return (items,index)
+  })
+  
+}
 
 // Возвращает массив групп, к которым принадлежит пользователь user
 function userGroups(user) {}
